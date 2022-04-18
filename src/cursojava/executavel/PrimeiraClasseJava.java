@@ -22,18 +22,17 @@ public class PrimeiraClasseJava {
 	
 		Aluno aluno1 = new Aluno();
 		
-		aluno1.setDisciplina1(disciplina1);
-		aluno1.setDisciplina2(disciplina2);
-		aluno1.setDisciplina3(disciplina3);
-		aluno1.setDisciplina4(disciplina4);
+		aluno1.getDisciplinca().setNota1(Double.parseDouble(nota1));
+		aluno1.getDisciplinca().setNota2(Double.parseDouble(nota2));
+		aluno1.getDisciplinca().setNota3(Double.parseDouble(nota3));
+		aluno1.getDisciplinca().setNota4(Double.parseDouble(nota4));
 		
-		aluno1.setNome(nome);
-		aluno1.setIdade(Integer.valueOf(idade));
-		aluno1.setDataNascimento(dataNascimento);
-		aluno1.setNota1(Integer.valueOf(nota1));
-		aluno1.setNota2(Integer.valueOf(nota2));
-		aluno1.setNota3(Integer.valueOf(nota3));
-		aluno1.setNota4(Integer.valueOf(nota4));
+		aluno1.getDisciplinca().setDisciplina1(disciplina1);
+		aluno1.getDisciplinca().setDisciplina1(disciplina2);
+		aluno1.getDisciplinca().setDisciplina1(disciplina3);
+		aluno1.getDisciplinca().setDisciplina1(disciplina4);
+		
+		
 		
 		System.out.println(aluno1.toString());
 		System.out.println("Média do aluno = "+aluno1.getMediaNotas());
