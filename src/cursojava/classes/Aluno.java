@@ -1,5 +1,7 @@
 package cursojava.classes;
 
+import java.util.Objects;
+
 //Esta classe representa o nosso objeto do mundo real3
 
 public class Aluno {
@@ -7,14 +9,12 @@ public class Aluno {
 	private String nome;
 	private int idade;
 	private String dataNascimento;
-	private Long cpf;
-	
+	private String cpf;
+
 	private double nota1;
 	private double nota2;
 	private double nota3;
 	private double nota4;
-
-
 
 	public Aluno() {
 
@@ -33,6 +33,7 @@ public class Aluno {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -53,11 +54,11 @@ public class Aluno {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public Long getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Long cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
@@ -92,15 +93,14 @@ public class Aluno {
 	public void setNota4(double nota4) {
 		this.nota4 = nota4;
 	}
-	
 
 	public double getMediaNotas() {
-		return (nota1+nota2+nota3+nota4) / 4;
+		return (nota1 + nota2 + nota3 + nota4) / 4;
 	}
-	
+
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNotas();
-		if(media >= 70 ) {
+		if (media >= 70) {
 			return true;
 		} else {
 			return false;
@@ -112,9 +112,22 @@ public class Aluno {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", cpf=" + cpf
 				+ ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3=" + nota3 + ", nota4=" + nota4 + "]";
 	}
-	
-	
-	
-	
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(cpf, nome);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		return Objects.equals(cpf, other.cpf) && Objects.equals(nome, other.nome);
+	}
+
 }
