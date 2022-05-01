@@ -14,10 +14,11 @@ public class Aluno {
 	private String cpf;
 
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
-	
+
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
+
 	public List<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}
@@ -69,7 +70,11 @@ public class Aluno {
 	}
 
 	public double getMediaNotas() {
-		return 0;
+	double somaNotas = 0.0;
+		for (Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+			
+		} return somaNotas / disciplinas.size();
 	}
 
 	public boolean getAlunoAprovado() {
