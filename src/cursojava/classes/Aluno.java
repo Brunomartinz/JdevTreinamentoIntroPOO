@@ -1,5 +1,7 @@
 package cursojava.classes;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 //Esta classe representa o nosso objeto do mundo real3
@@ -11,14 +13,13 @@ public class Aluno {
 	private String dataNascimento;
 	private String cpf;
 
-	private Disciplina disciplinca = new Disciplina();
-
-	public void setDisciplinca(Disciplina disciplinca) {
-		this.disciplinca = disciplinca;
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
+	
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
-
-	public Disciplina getDisciplinca() {
-		return disciplinca;
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
 	}
 
 	public Aluno() {
@@ -68,7 +69,7 @@ public class Aluno {
 	}
 
 	public double getMediaNotas() {
-		return (disciplinca.getNota1() + disciplinca.getNota2() + disciplinca.getNota3() + disciplinca.getNota4()) / 4;
+		return 0;
 	}
 
 	public boolean getAlunoAprovado() {
@@ -82,8 +83,7 @@ public class Aluno {
 
 	@Override
 	public String toString() {
-		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", cpf=" + cpf
-				+ ", disciplinca=" + disciplinca + "]";
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", cpf=" + cpf + "]";
 	}
 
 	@Override

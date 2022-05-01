@@ -22,17 +22,6 @@ public class PrimeiraClasseJava {
 	
 		Aluno aluno1 = new Aluno();
 		
-		aluno1.getDisciplinca().setNota1(Double.parseDouble(nota1));
-		aluno1.getDisciplinca().setNota2(Double.parseDouble(nota2));
-		aluno1.getDisciplinca().setNota3(Double.parseDouble(nota3));
-		aluno1.getDisciplinca().setNota4(Double.parseDouble(nota4));
-		
-		aluno1.getDisciplinca().setDisciplina1(disciplina1);
-		aluno1.getDisciplinca().setDisciplina1(disciplina2);
-		aluno1.getDisciplinca().setDisciplina1(disciplina3);
-		aluno1.getDisciplinca().setDisciplina1(disciplina4);
-		
-		
 		
 		System.out.println(aluno1.toString());
 		System.out.println("Média do aluno = "+aluno1.getMediaNotas());
